@@ -48,12 +48,17 @@ p {
     font-weight: 600;
 }
 
-button {
+.link_button {
+    display: block;
+    width: fit-content;
+    margin: auto;
     padding: 15px;
+    box-sizing: border-box;
     background-color: var(--action_color);
     color: var(--base_color);
     border: none;
     border-radius: 5px;
+    text-decoration: none;
 }
 
 header {
@@ -96,6 +101,7 @@ header > #menu_bar {
 header > #menu_bar > #branding {
     text-decoration: none;
     color: var(--base_color);
+    background: none;
     font-family: "Righteous", sans-serif;
     font-weight: 400;
     font-style: normal;
