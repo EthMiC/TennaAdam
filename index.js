@@ -18,6 +18,5 @@ function slide_hero() {
     slides_container.children[current_slide_index].setAttribute( 'class', 'not-active');
     previous_slide_index = current_slide_index;
     current_slide_index += current_slide_index < 4 ? 1 : -4;
-    console.log(current_slide_index)
     slides_container.children[current_slide_index].setAttribute( 'class', 'active');
 }
