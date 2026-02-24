@@ -9,6 +9,8 @@
         href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Righteous&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="booking.css">
+    <script src="booking.js"></script>
     <title>Tenna Adam</title>
 </head>
 <body>
@@ -21,11 +23,51 @@
             <a id="branding" class=".righteous-regular" href="./">
                 Tenna Adam
             </a>
-            <button>
-                =
-            </button>
         </div>
     </Header>
-    
+    <section id="booking">
+        <h1>Booking</h1>
+        <div id="content">
+            <form action="">
+                <div id = "information">
+                    <h3>Your information</h3>
+                    <div id="identification">
+                        <select name="title" id="title">
+                            <option value="" disabled hidden selected>Title</option>
+                            <option value="Mr">Mr.</option>
+                            <option value="Ms">Ms.</option>
+                            <option value="Mrs.">Mrs.</option>
+                            <option value="">None</option>
+                        </select>
+                        <input type="text" name="Name" id="full_name" placeholder="Full Name">
+                    </div>
+                    <div id="contact">
+                        <input type="number" name="phone_number" id="phone_number" pattern="09\d{8}" placeholder="phone number">
+                        <input type="text" name="email" id="email" placeholder="email">
+                    </div>
+                </div>
+                <div id="patient_information">
+                    <h3>Recepients Information</h3>
+                    <div id="select_patient">
+                        <select name="select_patient" id="select_patient">
+                            <option value="" disabled hidden selected>Select Recepient of care</option>
+                            <option value="self">My Self</option>
+                            <option value="other">For Someone else</option>
+                        </select>
+                    </div>
+                    <div id="self_form">
+                        <textarea name="self_form_message" id="self_form_message" placeholder="Why are you booking with us?"></textarea>
+                    </div>
+                    <div id="other_form" hidden>
+                        <input type="text" name="Name" id="full_name" placeholder="Full Name">
+                        <textarea name="self_form_message" id="self_form_message" placeholder="Why are you booking with us?"></textarea>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section id="message">
+        <p>We are grateful that you have chosen to book with us.<br/> We will provide the best care possible.</p>
+    </section>
 </body>
 </html>

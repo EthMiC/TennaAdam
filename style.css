@@ -12,6 +12,12 @@
     --primary_color: #254441;
     --accent_color: #C70000;
     --slide_speed: 750ms;
+    
+    /* --primary_deep: #1F4D3A;
+    --primary_base: #3E6F57;
+    --primary_soft : #7FA48F;
+    --primary_pale : #C9DAD1;
+    --accent: #D65A4F; */
 }
 
 
@@ -29,6 +35,10 @@ body {
 body > section {
     padding: 20px;
     border-radius: 5px;
+}
+
+body > section:first-of-type {
+    margin-top: 90px !important;
 }
 
 body > section:nth-of-type(odd) {
@@ -53,7 +63,7 @@ h1::after {
 
 h1 {
     text-align: center;
-    font-size: 25px;;
+    font-size: 22px;;
 }
 
 h2 {
@@ -61,8 +71,12 @@ h2 {
 }
 
 p {
-    font-weight: 00;
-    font-size: 12.5px;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+br {
+    margin-bottom: 5px;
 }
 
 .link_button {
@@ -134,178 +148,6 @@ header > #menu_bar > button {
     border: none;
 }
 
-#hero {
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-    margin-top: 90px;
-    padding: 0;
-    width: 100%;
-    min-height: calc(100vh - 200px);
-    overflow: hidden;
-}
-
-#hero > #slide {
-    position: relative;
-    aspect-ratio: 4 / 3;
-    color: var(--primary_color);
-    border: solid 5px;
-    box-sizing: border-box;
-    overflow: hidden;
-    margin: 0;
-}
-
-#hero > #slide > * {
-    position: absolute;
-    height: 100%;
-    max-height: 100vh;
-    left: 100%;
-    aspect-ratio: 4 / 3;
-    background-size: cover;
-    background-position: center;
-    transition: none;
-    will-change: left;
-}
-
-#hero > #slide > .active {
-    left: 0;
-    transition: var(--slide_speed);
-}
-
-
-#hero > #slide > .not-active {
-    left: -100%;
-    transition: var(--slide_speed);
-}
-
-#hero > #slide > [data-index="0"] {
-    background-image: url("./assets/slide_backgrounds/0.webp");
-}
-
-#hero > #slide > [data-index="1"] {
-    background-image: url("./assets/slide_backgrounds/1.webp");
-}
-
-#hero > #slide > [data-index="2"] {
-    background-image: url("./assets/slide_backgrounds/2.webp");
-}
-
-#hero > #slide > [data-index="3"] {
-    background-image: url("./assets/slide_backgrounds/3.webp");
-}
-
-#hero > #slide > [data-index="4"] {
-    background-image: url("./assets/slide_backgrounds/4.webp");
-}
-
-#hero > #slide > * > #content {
-    position: absolute;
-    background-color: var(--base_color);
-    filter: opacity(0.67) contrast(1.5);
-    bottom: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
-    width: 50%;
-    height: fit-content;
-    padding: 10px;
-    text-align: center;
-    box-sizing: border-box;
-    border-radius: 20px 20px 0 0;
-}   
-
-#hero > #booking {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    padding: 40px;
-    text-align: center;
-    justify-content: center;
-}
-
-#about_us > h1 {
-    text-align: center;
-}
-
-#about_us > div {
-    margin-bottom: 50px;
-}
-
-#about_us > div > p {
-    margin-left: 20px;
-    text-align: justify;
-}
-
-#services {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    align-items: center;
-}
-
-#services > h1 {
-    margin-left: 30vw;
-    margin-right: 30vw;
-}
-
-#services > div {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    gap: 0;
-    position: relative;
-    width: 90%;
-    box-sizing: border-box;
-    aspect-ratio: 4/3;
-    color: var(--fore_color);
-    border-radius: 10px;
-    background-size: cover;
-    background-position: center right;
-}
-
-#services > div:nth-of-type(1) {
-    background-image: url("./assets/general_care.webp");
-}
-
-#services > div:nth-of-type(2) {
-    background-image: url("./assets/medical_care.webp");
-}
-
-#services > div:nth-of-type(3) {
-    background-image: url("./assets/physical_care.webp");
-}
-
-#services > div > div {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    padding: 15px;
-    box-sizing: border-box;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: fit-content;
-    gap: 10px;
-    background-color: var(--base_color);
-    opacity: 0.65;
-    border-radius: 10px;
-    box-shadow: 0 0 10px black;
-}
-
-#services > div > div > * {
-    position: relative;
-    margin: 0;
-}
-
-#services > div > div > p {
-    font-weight: 600z;
-}
-
-#message > p {
-    margin: auto;
-    width: 80%;
-    text-align: center;
-}
-
 @media (pointer:fine) {
     body > section:nth-of-type(even)  {
         padding: 20px 25vw;
@@ -326,52 +168,5 @@ header > #menu_bar > button {
 
     header > #menu_bar {
         height: 60px;
-    }
-
-    #hero {
-        flex-direction: row-reverse;
-        min-height: 0;
-        max-height: calc(100vh - 100px);
-    }
-
-    #hero > #slide {
-        --max-width: calc((100vh - 100px) * 4 / 3);
-        flex-grow: 4;
-        max-width: min(70vw, var(--max-width));
-    }
-
-    #hero > #slide > * > #content {
-        bottom: 30%;
-        border-radius: 20px;
-        max-width: 20rem;
-    }
-
-    #hero > #booking {
-        flex-grow: 1;
-        min-width: 270px;
-        width: auto;
-        margin: 0 auto;
-    }
-
-    #services {
-        /* flex-direction: row;
-        flex-wrap: wrap; */
-        justify-content: center;
-    }
-
-    #services > div {
-        width: 50%;
-        aspect-ratio: 5/3;
-        margin: 20px 0;
-    }
-    
-    #services > div > div {
-        position: inherit;
-        width: 50%;
-        height: fit-content;
-        left: 0;
-        bottom: 0;
-        padding: 20px;
-        gap: 20px;
     }
 }

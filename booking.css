@@ -1,0 +1,49 @@
+:root {
+    --input_box_size: 35px;
+    --input_font_size: 15px;
+}
+
+input {
+    height: var(--input_box_size);
+    font-size: var(--input_font_size);
+    box-sizing: border-box;
+}
+
+select {
+    height: var(--input_box_size);
+    font-size: var(--input_font_size);
+}
+
+option:disabled {
+    color: #757575;
+}
+
+#booking > #content > form > #information > #identification {
+    display: flex;
+    flex-direction: row;
+}
+
+#booking > #content > form > #information > #identification > select {
+    flex: 2;
+    max-width: 200px;
+}
+
+#booking > #content > form > #information > #identification > input {
+    flex: 5;
+}
+
+#booking > #content > form > #information > #contact {
+    display: flex;
+    flex-direction: column;
+}
+
+#booking > #content > form > #patient_information > div > textarea {
+    width: 100%;
+    aspect-ratio: 2;
+    font-size: var(--input_font_size);
+}
+
+#message > p {
+    text-align: center;
+    font-weight: 600;
+}
