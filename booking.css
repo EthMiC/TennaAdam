@@ -43,6 +43,20 @@ option:disabled {
     font-size: var(--input_font_size);
 }
 
+#booking > #content > form > #submit_button {
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 15px;
+    height: fit-content;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    color: var(--base_color);
+    background: var(--action_color);
+    border: none;
+    border-radius: 5px;
+}
+
 #message > p {
     text-align: center;
     font-weight: 600;

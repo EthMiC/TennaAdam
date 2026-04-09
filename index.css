@@ -12,15 +12,17 @@
     position: relative;
     aspect-ratio: 4 / 3;
     color: var(--primary_color);
-    border: solid 5px;
+    border: solid 20px;
+    box-shadow: 0 0 0 40px var(--primary_color);
     box-sizing: border-box;
     overflow: hidden;
     margin: 0;
+    border-radius: inherit;
 }
 
 #hero > #slide > * {
     position: absolute;
-    height: 100%;
+    width: 100%;
     max-height: 100vh;
     left: 100%;
     aspect-ratio: 4 / 3;
@@ -180,17 +182,24 @@
     text-align: center;
 }
 
-@media (pointer:fine) {
+@media (min-width: 750px) {
     #hero {
-        flex-direction: row-reverse;
         min-height: 0;
-        max-height: calc(100vh - 100px);
+        flex-direction: row-reverse;
+        aspect-ratio: calc(1920/980);
     }
 
     #hero > #slide {
         --max-width: calc((100vh - 100px) * 4 / 3);
         flex-grow: 4;
         max-width: min(70vw, var(--max-width));
+    }
+    
+    #hero > #slide::after {
+        background: linear-gradient(
+            0 var(--primary_color),
+            100% #0000,
+        );
     }
 
     #hero > #slide > * > #content {
@@ -200,7 +209,7 @@
     }
 
     #hero > #booking {
-        flex-grow: 1;
+        flex-grow: 2;
         min-width: 270px;
         width: auto;
         margin: 0 auto;
@@ -210,25 +219,31 @@
         text-align: left;
     }
 
-    #services {
-        /* flex-direction: row;
-        flex-wrap: wrap; */
+    #services { 
         justify-content: center;
     }
 
+
     #services > div > div {
-        width: 50%;
-        aspect-ratio: 5/3;
+        width: 100%;
+        aspect-ratio: 2;
         margin: 20px 0;
+        align-items: flex-end;
+        background-size: 65% 100%;
+        background-position: left;
+        background-repeat: no-repeat;
     }
     
     #services > div > div > div {
         position: inherit;
-        width: 50%;
-        height: fit-content;
-        left: 0;
-        bottom: 0;
+        height: 100%;
+        width: 35%;
         padding: 20px;
         gap: 20px;
+    }
+
+    #services > div > div > div:before {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
     }
 }

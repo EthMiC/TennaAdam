@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="prefetch" href="PublicKey.PEM">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -10,7 +11,6 @@
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="booking.css">
-    <script src="booking.js"></script>
     <title>Tenna Adam</title>
 </head>
 <body>
@@ -28,7 +28,7 @@
     <section id="booking">
         <h1>Booking</h1>
         <div id="content">
-            <form action="">
+            <form>
                 <div id = "information">
                     <h3>Your information</h3>
                     <div id="identification">
@@ -39,23 +39,23 @@
                             <option value="Mrs.">Mrs.</option>
                             <option value="">None</option>
                         </select>
-                        <input type="text" name="Name" id="full_name" placeholder="Full Name">
+                        <input type="text" name="Name" id="full_name" placeholder="Full Name" required>
                     </div>
                     <div id="contact">
-                        <input type="number" name="phone_number" id="phone_number" pattern="09\d{8}" placeholder="phone number">
-                        <input type="text" name="email" id="email" placeholder="email">
+                        <input type="tel" name="phone_number" id="phone_number" pattern="09\d{8}" placeholder="&#9990 phone number" required>
+                        <input type="text" name="email" id="email" placeholder="&#9993 email">
                     </div>
                 </div>
                 <div id="patient_information">
-                    <h3>Recepients Information</h3>
+                    <h3>recipients Information</h3>
                     <div id="select_patient">
-                        <select name="select_patient" id="select_patient">
-                            <option value="" disabled hidden selected>Select Recepient of care</option>
+                        <select name="select_patient" id="select_patient" required>
+                            <option value="" disabled hidden selected>Select recipient of care</option>
                             <option value="self">My Self</option>
-                            <option value="other">For Someone else</option>
+                            <option value="other">Family or Friend</option>
                         </select>
                     </div>
-                    <div id="self_form">
+                    <div id="self_form" hidden>
                         <textarea name="self_form_message" id="self_form_message" placeholder="Why are you booking with us?"></textarea>
                     </div>
                     <div id="other_form" hidden>
@@ -63,11 +63,13 @@
                         <textarea name="self_form_message" id="self_form_message" placeholder="Why are you booking with us?"></textarea>
                     </div>
                 </div>
+                <input type="submit" id="submit_button" value="Submit">
             </form>
         </div>
     </section>
     <section id="message">
         <p>We are grateful that you have chosen to book with us.<br/> We will provide the best care possible.</p>
     </section>
+    <script src="booking.js"></script>
 </body>
 </html>

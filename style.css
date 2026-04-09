@@ -6,11 +6,11 @@
 }
 
 :root {
-    --base_color: #FFFFFF;
-    --action_color: #43AA8B;
-    --fore_color: #40493C;
-    --primary_color: #254441;
-    --accent_color: #C70000;
+    --base_color: #f3f3f3;
+    --action_color: #6dc49d;
+    --fore_color: #282c22;
+    --primary_color: #2e554e;
+    --accent_color: #e03029;
     --slide_speed: 750ms;
     
     /* --primary_deep: #1F4D3A;
@@ -22,7 +22,7 @@
 
 
 body {
-    width: 100vw;
+    width: 100%;
     box-sizing: border-box;
     margin: 0;
     font-family: "Libre Franklin", sans-serif;
@@ -38,7 +38,7 @@ body > section {
 }
 
 body > section:first-of-type {
-    margin-top: 90px !important;
+    padding-top: 90px !important;
 }
 
 body > section:nth-of-type(odd) {
@@ -77,6 +77,17 @@ p {
 
 br {
     margin-bottom: 5px;
+}
+
+button {
+    height: fit-content;
+    padding: 10px;
+    padding-left: 25px;
+    padding-right: 25px;
+    color: var(--base_color);
+    background: var(--action_color);
+    border: none;
+    border-radius: 5px;
 }
 
 .link_button {
@@ -148,10 +159,10 @@ header > #menu_bar > button {
     border: none;
 }
 
-@media (pointer:fine) {
-    body > section:nth-of-type(even)  {
-        padding: 20px 25vw;
-        box-sizing: content-box;
+@media (min-width: 750px) {
+    body > section {
+        border-radius: 20px;
+        padding: 20px 20vw;
     }
 
     h1 {

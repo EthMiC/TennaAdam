@@ -1,0 +1,11 @@
+header > #menu_bar > #options {
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: calc(fit-content);
+    overflow: hidden;
+}
+
+header > #menu_bar > #options.hidden {
+    height: 0;
+}
